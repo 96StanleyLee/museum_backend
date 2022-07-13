@@ -3,11 +3,11 @@ class DepartmentsController < ApplicationController
     before_action :set_departments
     
     def index
-        render json: @departments['departments']
+        render json: @departments
     end
 
     def show
-        if @departments['departments'].any? {|department| department["departmentId"].to_i == params[:id].to_i}
+        if @departments.any? {|department| department["departmentId"].to_i == params[:id].to_i}
             random_painting_id = HTTParty.get("https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=#{params[:id]}")["objectIDs"].sample()
             painting = HTTParty.get("https://collectionapi.metmuseum.org/public/collection/v1/objects/#{random_painting_id}")
     
@@ -28,7 +28,7 @@ class DepartmentsController < ApplicationController
     private
 
     def set_departments
-        @departments = HTTParty.get('https://collectionapi.metmuseum.org/public/collection/v1/departments')
+        @departments = HTTParty.get('https://collectionapi.metmuseum.org/public/collection/v1/departments')['departments']
     end
 
 
