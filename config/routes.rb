@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  get '/museum' => "museum#index"
+  get '/index' => "paintings#index"
+  get '/random' => "paintings#random"
+
+  resources :departments, only: [:index, :show]
 end
