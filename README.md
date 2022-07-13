@@ -1,24 +1,19 @@
-# README
+# Museum Backend 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Ruby on Rails server grabs data on random artworks provided by the [MET Museum](https://metmuseum.github.io/)
 
-Things you may want to cover:
+# Installation and Setup Instructions
 
-* Ruby version
+This application is to be run with a React Frontend located [here]('url')
 
-* System dependencies
+To install 
+`bundle`                                                                 
+To run 
+`rails s`
 
-* Configuration
+Make sure that you're running the server on port 3000.
 
-* Database creation
+Technologies Used:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Ruby on Rails
+2. HTTP Party
