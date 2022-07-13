@@ -7,7 +7,8 @@ A Ruby on Rails server grabs data on random artworks provided by the [MET Museum
 This application is to be run with a React Frontend located [here]('url')
 
 To install 
-`bundle`                                                                 
+`bundle`
+
 To run 
 `rails s`
 
