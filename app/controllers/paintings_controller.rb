@@ -1,13 +1,9 @@
 class PaintingsController < ApplicationController
     
-    before_action :set_departments
+    before_action :set_departments, except: :show
     
     def index
             woman_with_vase = HTTParty.get('https://collectionapi.metmuseum.org/public/collection/v1/objects/436121')
-            combined = {
-                'women_with_vase': woman_with_vase,
-                'departments': @departments
-            }
             render json: woman_with_vase
     end
 
@@ -29,12 +25,4 @@ class PaintingsController < ApplicationController
     
         render json: combined
     end
-
-    private
-
-    def set_departments
-        @departments = HTTParty.get('https://collectionapi.metmuseum.org/public/collection/v1/departments')['departments']
-    end
-
-
 end
